@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import '../global.css';
 
 const ContentHome = () => {
@@ -7,7 +7,7 @@ const ContentHome = () => {
     return (    
             <div className="justify-content-md-center">
                 <h5>ACA VA UN TEXTO SOBRE EL JUEGO</h5>
-                <Link to="../Pages/Dashboard.js">
+                <Link to="../Pages/Question.js">
                     <button className="niceButton">
                         Jugar
                     </button>

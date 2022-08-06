@@ -1,0 +1,21 @@
+{
+    "results": [{
+            "category": "...",
+            "question": "...",
+            "correct_answer": "...",
+            "incorrect_answers": ["...", "...", "..."]
+        },
+        {
+            "category": "...",
+            "question": "...",
+            "correct_answer": "...",
+            "incorrect_answers": ["...", "...", "..."]
+        },
+        {
+            "category": "...",
+            "question": "...",
+            "correct_answer": "...",
+            "incorrect_answers": ["...", "...", "..."]
+        }
+    ]
+}
