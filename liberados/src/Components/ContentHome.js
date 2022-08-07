@@ -6,7 +6,7 @@ const ContentHome = () => {
     /*const redir = `../Pages/Question/${1}`;*/
     return (    
             <div className="justify-content-md-center">
-                <h5>ACA VA UN TEXTO SOBRE EL JUEGO</h5>
+                <h5>Aca va un textito sobre el juego</h5>
                 <Link to="/jugar">
                     <button className="niceButton">
                         Jugar
