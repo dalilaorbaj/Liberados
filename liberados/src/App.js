@@ -11,9 +11,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Routes>          
-          <Route exact path="/" component={Home} />
-          <Route path="/jugar" component={Juego} />
-          <Route path="/resultados" component={Dashboard} />
+      <Route path="/" element={<Home />} />
+
+          <Route path="/jugar" element={<Juego />} />
+          <Route path="/resultados" element={<Dashboard />} />
           </Routes>
       </BrowserRouter>    
     </div>

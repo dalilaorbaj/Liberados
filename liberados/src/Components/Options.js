@@ -1,19 +1,11 @@
 import React, {Component} from "react";
 import '../global.css';
 
-/*
-return (    
-    <div onChange={this.onChangeValue}>
-        <input type="radio" value={content} name="Opción"> {content}</input>
-        <input type="radio" value={content} name="Opción"> {content}</input>
-        <input type="radio" value={content} name="Opción"> {content}</input>
-        <input type="radio" value={content} name="Opción"> {content}</input>
-    </div>
-    );
-*/
+
 
 const Options = ({content}) => {
-    constructor(props) {
+    /*
+  constructor(props) {
         super(props);
         this.state = {
           selectedOption: "option1"
@@ -32,7 +24,7 @@ const Options = ({content}) => {
         console.log("You have submitted:", this.state.selectedOption);
       };
     
-      render() {
+      render() {*/
         return (
           <div className="container">
             <div className="row mt-5">
@@ -88,7 +80,5 @@ const Options = ({content}) => {
           </div>
         );
       }
-      
-    }
 
 export default Options;
