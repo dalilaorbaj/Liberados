@@ -7,7 +7,7 @@ const ContentHome = () => {
     return (    
             <div className="justify-content-md-center">
                 <h5>ACA VA UN TEXTO SOBRE EL JUEGO</h5>
-                <Link to="../Pages/Question.js">
+                <Link to="/jugar">
                     <button className="niceButton">
                         Jugar
                     </button>
