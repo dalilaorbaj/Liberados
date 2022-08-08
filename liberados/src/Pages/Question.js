@@ -14,7 +14,7 @@ import '../App.css';
      gap: 1rem;
      margin: 1rem 0;
   `
-  const Question = () => {
+  const Juego = () => {
      const [currentIndex, setCurrentIndex] = useState(0)
      const [endQuiz, setEndQuiz] = useState(false)
      const [score, setScore] = useState(0);
@@ -54,6 +54,7 @@ import '../App.css';
         setEndQuiz(true)
         setCurrentIndex(prev => prev + 1)
         setAvg((score / currentIndex) * 100)
+        seeResults()
      }
   
      //function to result all variables 
@@ -107,7 +108,7 @@ import '../App.css';
               <div className="bottom">
                  <Button
                     className='secondary'
-                    onClick={nextQuestion()}
+                    onClick={()=>nextQuestion()}
                     disabled={showAns || currentIndex === 0}>
                     Ver resultados
                  </Button>
@@ -118,4 +119,4 @@ import '../App.css';
   }
   
   
-  export default Question;
+  export default Juego;
