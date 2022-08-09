@@ -3,6 +3,9 @@ import Pregunta from '../Components/Pregunta';
 import Options from '../Components/Options';*/
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
+import '../global.css'
+import './Question.css'
+
   import React, { useState } from 'react'
   import styled from 'styled-components'
   import { randQustions } from '../Components/Quiz'
@@ -10,7 +13,6 @@ import '../App.css';
   import { Box, Button } from '../Components/UIElements';
   import ShowConfetti from '../Components/ShowConfetti';
   const BasicGrid = styled.div`
-     display: grid;
      gap: 1rem;
      margin: 1rem 0;
   `
@@ -30,6 +32,7 @@ import '../App.css';
         /*setTimeout(() => {
            nextQuestion()
         }, 1800)*/
+        nextQuestion();
      }
   
      //function to go to next question if within bounds of quiz length and hide correct answer 
@@ -72,18 +75,18 @@ import '../App.css';
               }
               <Box >
                  <div className="spacer"></div>
-                 <div className="top" style={{ textAlign: 'center' }}>
+                 <div className="top mt-5" style={{ textAlign: 'center'}}>
                     <ShowMessage avg={avg} />
                     <p>Hiciste <strong>{score}</strong> bien de <strong>{currentIndex}</strong> = <strong>{avg.toFixed(1)}%</strong></p>
                  </div>
-                 <Button onClick={reset} >Start over?</Button>
+                 <Button onClick={reset} >Reiniciar juego</Button>
               </Box>
            </>
         )
      }
   
      return (
-        <>
+        <div className='centrado fondo'>
            <Box className='question-box m-full-y' >
               <div className="top">
                  <h6 className='top-text'>Pregunta {currentIndex + 1} de {randQustions.length}</h6>
@@ -92,10 +95,10 @@ import '../App.css';
                  </div>
               </div>
   
-              <BasicGrid className="answers-row middle">
+              <BasicGrid className="answers-row middle mb-5">
                  {randQustions[currentIndex].answers.map((answer, key) => (
                     <Button
-                       className={showAns && answer.isCorrect ? 'ans' : ''}
+                       className={ "mb-4" + (showAns && answer.isCorrect ? 'ans' : '')}
                        onClick={(e) => { handleAnswerClick(answer.isCorrect, e) }}
                        key={key}
                        disabled={showAns}
@@ -104,6 +107,7 @@ import '../App.css';
                     </Button>
                  ))}
               </BasicGrid>
+  {/*
   
               <div className="bottom">
                  <Button
@@ -113,8 +117,9 @@ import '../App.css';
                     Ver resultados
                  </Button>
               </div>
+              */}
            </Box>
-        </>
+        </div>
      )
   }
   
