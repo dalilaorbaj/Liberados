@@ -1,3 +1,17 @@
 .fondo{
-    background-color: aquamarine;
+    background-color: #488cfc;
+    color: white;
+
+    /*background-color:#fca31d*/
+}
+
+.text{
+    font-family: 'Junegull';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+    
+    color: #FFFFFF;
 }

@@ -7,11 +7,11 @@ const ShowMessage = ({ avg }) => {
    }
 
    if (avg >= 80) {
-      message.text = 'Excellent Work!';
+      message.text = 'Excelente';
       message.emoji = '🎉';
    }
    else if (avg >= 70) {
-      message.text = 'Good Work!';
+      message.text = 'Muy bien';
       message.emoji = '🥂'
    }
    else {

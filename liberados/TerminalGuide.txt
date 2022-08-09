@@ -1,0 +1,15 @@
+In case you want to use this repo take into account the next steps: 
+
+git clone https://github.com/dalilaorbaj/Liberados.git
+cd liberados
+cd liberados
+code .
+---- 
+npm install
+npm install react-bootstrap bootstrap
+npm i react-router-dom
+npm audit fix --force
+npm i react-js-banner
+npm start
+
+Dalila Orbaj
