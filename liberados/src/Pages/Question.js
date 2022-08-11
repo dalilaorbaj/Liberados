@@ -11,6 +11,7 @@ import { randQustions } from '../Components/Quiz'
 import ShowMessage from '../Components/ShowMessage';
 import { Box, Button } from '../Components/UIElements';
 import ShowConfetti from '../Components/ShowConfetti';
+import Navbar from '../Components/Navbar'
 const BasicGrid = styled.div`
    gap: 1rem;
    margin: 1rem 0;
@@ -86,10 +87,12 @@ const Juego = () => {
    }
 
    return (
+      <>
+      <Navbar/>
       <div className='fondo'style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
          <Box className='question-box m-full-y' >
-            <div className="top">
-               <h6 className='top-text'>Pregunta {currentIndex + 1} de {randQustions.length}</h6>
+            <div className="top mt-4">
+               <h6 className='top-text mt-4'>Pregunta {currentIndex + 1} de {randQustions.length}</h6>
                <div className="question">
                   <h2 className='question-text text'>{randQustions[currentIndex].question}</h2>
                </div>
@@ -120,7 +123,7 @@ const Juego = () => {
  */}
          </Box>
       </div>
-   )
+      </>   )
 }
 
 

@@ -3,11 +3,7 @@ import '../global.css';
 
 const Header = () => {
     return (    
-            <div id="header" className="row justify-content-md-center">
-                <div className="mb-5 mt-5 col-6 justify-content-md-center">
-                    <img src={require('../Banner.png')} alt="Banner" style={{height: 300, flex: 1, width: null,}} />
-                </div>
-            </div>        
+                    <img src={require('../Banner1.png')} alt="Banner" style={{height: "80%", flex: 1, width: '100%'}} />
     );
 }
 export default Header
