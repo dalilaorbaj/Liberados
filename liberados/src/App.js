@@ -5,11 +5,21 @@ import Home from './Pages/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
-import React from 'react'
+import React, { useEffect } from 'react'
+import { traerPreguntas } from './Helpers/fetchMetaData';
 
 function App() {
+
+  const traerPregs = async() => {
+    await traerPreguntas()
+  }
+
+  useEffect(() => {
+    traerPregs()
+  }, [])
+
   return (
-    <div className="App">
+    <div className="App fondo">
       <BrowserRouter>
       <Routes>          
       <Route path="/" element={<Home />} />

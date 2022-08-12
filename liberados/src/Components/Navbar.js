@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <MDBNavbar expand='lg' light bgColor='#0054D2' className="navbarColor">
       <MDBContainer fluid>
-        <MDBNavbarBrand href='/Home.js'>  <img src={require('../logo.png')} alt="Icon" style={{height: "30%", width: '30%', marginRight: "100%"}} /></MDBNavbarBrand>
+        <MDBNavbarBrand href='/'>  <img src={require('../logo.png')} alt="Icon" style={{height: "30%", width: '30%', marginRight: "100%"}} /></MDBNavbarBrand>
 
 
         <div className='right'>

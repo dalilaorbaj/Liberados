@@ -10,6 +10,12 @@ background-color: #448FFF;
 color: #FFFFFF;
 }
 
+body {
+  height: 100vh;
+background-color: #448FFF;
+
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -43,4 +49,8 @@ color: #FFFFFF;
   to {
     transform: rotate(360deg);
   }
+}
+
+* {
+  font-family: 'Signika', sans-serif;
 }
