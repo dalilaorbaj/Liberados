@@ -1,6 +1,3 @@
-/*import Navbar from '../Components/Navbar';
-import Pregunta from '../Components/Pregunta';
-import Options from '../Components/Options';*/
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import '../global.css'

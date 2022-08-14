@@ -13,7 +13,6 @@ export const Button = styled.button`
    font-weight: 500;
    width: 100%;
 
-   /* disabled styles */
    cursor: ${({ disabled }) => disabled ? 'not-allowed' : 'pointer'};
    background: ${({ disabled }) => disabled ? '#ffffff26' : ''};
 

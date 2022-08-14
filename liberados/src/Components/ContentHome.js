@@ -3,7 +3,6 @@ import { Link} from "react-router-dom";
 import '../global.css';
 
 const ContentHome = () => {
-    /*const redir = `../Pages/Question/${1}`;*/
     return (    
             <div className="justify-content-md-center">
                 <br/>

@@ -1,5 +1,5 @@
 import Navbar from '../Components/Navbar';
-import ContentHome from '../Components/ContentHome';
+import Question from '../Components/ContentHome';
 import Footer from '../Components/Footer';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';

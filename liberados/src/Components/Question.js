@@ -3,7 +3,7 @@ import '../global.css';
 
 
 
-const Question = ({content}) => {
+const Question = () => {
 
         return (
           <div className="container">

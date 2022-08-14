@@ -10,10 +10,7 @@ npm install react-bootstrap bootstrap
 npm i react-router-dom
 npm audit fix --force
 npm i react-js-banner
-npm i react-google-sheets
-npm i express ejs googleapis
 npm i -D nodemon
-/*https://www.npmjs.com/package/react-google-sheets*/
 npm start
 
 Dalila Orbaj
