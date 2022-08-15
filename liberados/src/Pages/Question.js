@@ -9,6 +9,7 @@ import ShowMessage from '../Components/ShowMessage';
 import { Box, Button } from '../Components/UIElements';
 import ShowConfetti from '../Components/ShowConfetti';
 import Navbar from '../Components/Navbar'
+import getData from '../Helpers/fetchMetaData'
 const BasicGrid = styled.div`
    gap: 1rem;
    margin: 1rem 0;
@@ -20,20 +21,17 @@ const Juego = () => {
    const [avg, setAvg] = useState(0);
    const [showAns, setShowAns] = useState(false);
 
-     //function to calc score and show correct answer
+   let questions = getData();
+   console.log(questions);
+
    const handleAnswerClick = (isCorrect, e) => {
       setShowAns(true)
       if (isCorrect) {
          setScore((prev) => prev + 1);
       }
-      /*setTimeout(() => {
-         nextQuestion()
-      }, 1800)*/
       nextQuestion();
    }
 
-     //function to go to next question if within bounds of quiz length and hide correct answer 
-     // if ouside the bounds of the quiz array, the quiz will end
    const nextQuestion = () => {
       setShowAns(false)
       if (currentIndex === randQustions.length - 1) {
@@ -44,7 +42,6 @@ const Juego = () => {
       }
    }
 
-     //function to pre-emptively end quiz
    const seeResults = () => {
       setEndQuiz(true)
         setAvg((score / currentIndex) * 100)
@@ -57,7 +54,6 @@ const Juego = () => {
       seeResults()
    }
 
-     //function to result all variables 
    const reset = () => {
       setEndQuiz(false);
       setCurrentIndex(0);
@@ -108,16 +104,6 @@ const Juego = () => {
                   </Button>
                ))}
             </BasicGrid>
-
-{/*         <div className="bottom">
-               <Button
-                  className='secondary'
-                  onClick={()=>nextQuestion()}
-                  disabled={showAns || currentIndex === 0}>
-                  Ver resultados
-               </Button>
-            </div>
- */}
          </Box>
       </div>
       </>   )

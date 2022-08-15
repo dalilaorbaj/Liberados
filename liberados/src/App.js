@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
 import React, { useEffect } from 'react'
-import { getData } from './Helpers/fetchMetaData';
+import getData from './Helpers/fetchMetaData';
 
 function App() {
 

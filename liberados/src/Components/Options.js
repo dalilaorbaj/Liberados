@@ -4,27 +4,6 @@ import '../global.css';
 
 
 const Options = ({content}) => {
-    /*
-  constructor(props) {
-        super(props);
-        this.state = {
-          selectedOption: "option1"
-        };
-      }
-    
-      handleOptionChange = changeEvent => {
-        this.setState({
-          selectedOption: changeEvent.target.value
-        });
-      };
-    
-      handleFormSubmit = formSubmitEvent => {
-        formSubmitEvent.preventDefault();
-    
-        console.log("You have submitted:", this.state.selectedOption);
-      };
-    
-      render() {*/
         return (
           <div className="container">
             <div className="row mt-5">
