@@ -10,6 +10,7 @@ import { Box, Button } from '../Components/UIElements';
 import ShowConfetti from '../Components/ShowConfetti';
 import Navbar from '../Components/Navbar'
 import getData from '../Helpers/fetchMetaData'
+import { useParams } from 'react-router-dom';
 const BasicGrid = styled.div`
    gap: 1rem;
    margin: 1rem 0;
@@ -24,10 +25,10 @@ const Juego = () => {
    const [questions, setQuestions] = useState([]);
    const [isLoaded, setIsLoaded] = useState(false);
 
+   const {grupo} = useParams()
 
    const traerPreguntas = async () => {
-      
-      const x = await getData();
+      const x = await getData(grupo);
       console.log(x);
       setQuestions(x);
       setIsLoaded(true)
@@ -103,41 +104,62 @@ const Juego = () => {
       )
    }
 
-   return (
-      <>
-      <Navbar/>
-      <div className='fondo'style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
-         {
-            isLoaded
-            &&
-            <Box className='question-box m-full-y' >
-            <div className="top mt-4">
-               <br/>
-               <br/>
-               <h6 className='top-text mt-4'>Pregunta {currentIndex + 1} de {questions.length}</h6>
-               <div className="question">
-                  <h2 className='question-text text'>{questions[currentIndex].question}</h2>
-               </div>
+   if (isLoaded) {
+      return (
+         <>
+         <Navbar/>
+         <div className='fondo'style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
+            
+                  {
+                     questions.length === 0
+                     ?
+                        <h1>Al parecer no hay preguntas</h1>
+                        
+                     :
+                     <Box className='question-box m-full-y' >
+                        <div className="top mt-4">
+                           <br/>
+                           <br/>
+                           <h6 className='top-text mt-4'>Pregunta {currentIndex + 1} de {questions.length}</h6>
+                           <div className="question">
+                              <h2 className='question-text text'>{questions[currentIndex].question}</h2>
+                           </div>
+                        </div>
+               
+                        <BasicGrid className="answers-row middle mb-5">
+                           {questions[currentIndex].answers.map((answer, key) => (
+                              <Button
+                                 className={ "mb-4" + (showAns && answer.isCorrect ? 'ans' : '')}
+                                 onClick={(e) => { handleAnswerClick(answer.isCorrect, e) }}
+                                 key={key}
+                                 disabled={showAns}
+                                 style={{backgroundColor:'#e39726', color:'white'}}
+                              >
+                                 {answer.answerText}
+                              </Button>
+                           ))}
+                        </BasicGrid>      
+                     </Box>
+                  }
+                  
+                  
+               
+            
+         </div>
+         </>   )
+   } else {
+      return(
+         <>
+         <Navbar/>
+            <div className='fondo'style={{display: 'flex',alignItems: 'center',justifyContent: 'center', flexDirection: 'column', height: '60vh'}}>
+               <h1>La llama esta trayendo las preguntas</h1>
+               <p>Aguarde por favor</p>
             </div>
-         
-            <BasicGrid className="answers-row middle mb-5">
-               {questions[currentIndex].answers.map((answer, key) => (
-                  <Button
-                     className={ "mb-4" + (showAns && answer.isCorrect ? 'ans' : '')}
-                     onClick={(e) => { handleAnswerClick(answer.isCorrect, e) }}
-                     key={key}
-                     disabled={showAns}
-                     style={{backgroundColor:'#e39726', color:'white'}}
-                  >
-                     {answer.answerText}
-                  </Button>
-               ))}
-            </BasicGrid>      
-         </Box>
-         }
-         
-      </div>
-      </>   )
+         </>
+      )
+   }
+
+   
 }
 
 

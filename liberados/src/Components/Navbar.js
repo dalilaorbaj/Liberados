@@ -15,7 +15,7 @@ const Navbar = () => {
               <MDBNavbarLink active aria-current='page' href='/' style={{color: "white", fontSize: "30px"}}>Inicio</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='/jugar' style={{color: "white", fontSize: "30px", marginLeft: "20px"}}>Jugar</MDBNavbarLink>
+              <MDBNavbarLink href='/grupo' style={{color: "white", fontSize: "30px", marginLeft: "20px"}}>Jugar</MDBNavbarLink>
             </MDBNavbarItem>              
 
           </MDBNavbarNav>

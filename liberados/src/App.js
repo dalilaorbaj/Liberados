@@ -15,6 +15,7 @@ function App() {
     await getData()
   }
 
+
   useEffect(() => {
     traerPregs()
   }, [])
@@ -25,7 +26,7 @@ function App() {
       <Routes>          
       <Route path="/" element={<Home />} />
 
-          <Route path="/jugar" element={<Juego />} />
+          <Route path="/jugar/:grupo" element={<Juego />} />
           <Route path="/resultados" element={<Dashboard />} />
           <Route path="/grupo" element={<Group />} />
 
