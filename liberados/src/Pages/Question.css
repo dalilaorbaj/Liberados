@@ -1,6 +1,11 @@
 .fondo{
-    background-color: #488cfc;
+    background-image: url("https://i.imgur.com/nxS11Mb.png");
     color: white;
+}
+
+body {
+    height: 100vh;
+    background-image: url("https://i.imgur.com/nxS11Mb.png");
 }
 
 .text{

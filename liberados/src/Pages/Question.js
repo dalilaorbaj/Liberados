@@ -2,9 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import '../global.css'
 import './Question.css'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { randQustions } from '../Components/Quiz'
+/*import { randQustions } from '../Components/Quiz'*/
 import ShowMessage from '../Components/ShowMessage';
 import { Box, Button } from '../Components/UIElements';
 import ShowConfetti from '../Components/ShowConfetti';
@@ -20,9 +20,23 @@ const Juego = () => {
    const [score, setScore] = useState(0);
    const [avg, setAvg] = useState(0);
    const [showAns, setShowAns] = useState(false);
+   const [questions, setQuestions] = useState([]);
 
-   let questions = getData();
-   console.log(questions);
+   const traerPreguntas = async () => {
+      const x = await getData();
+      console.log(x);
+      setQuestions(x);
+   }
+   
+   useEffect(() => {
+      traerPreguntas()
+   }, [])
+
+
+/*
+   console.log(questions.length)
+   console.log(questions)*/
+
 
    const handleAnswerClick = (isCorrect, e) => {
       setShowAns(true)
@@ -34,7 +48,7 @@ const Juego = () => {
 
    const nextQuestion = () => {
       setShowAns(false)
-      if (currentIndex === randQustions.length - 1) {
+      if (currentIndex === questions.length - 1) {
          endOfQuiz()
       }
       else {
@@ -62,6 +76,8 @@ const Juego = () => {
    }
    if (endQuiz) {
       return (
+         <>
+         <Navbar/>
          <div className='fondo' style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
             {avg >= 80 &&
                <ShowConfetti whenToShow={endQuiz} />
@@ -75,7 +91,7 @@ const Juego = () => {
                <Button onClick={reset} style={{backgroundColor:'#e39726', color:'white'}}>Reiniciar juego</Button>
             </Box>
             </div>
-         
+            </>
       )
    }
 
@@ -85,14 +101,16 @@ const Juego = () => {
       <div className='fondo'style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
          <Box className='question-box m-full-y' >
             <div className="top mt-4">
-               <h6 className='top-text mt-4'>Pregunta {currentIndex + 1} de {randQustions.length}</h6>
+               <br/>
+               <br/>
+               <h6 className='top-text mt-4'>Pregunta {currentIndex + 1} de {questions.length}</h6>
                <div className="question">
-                  <h2 className='question-text text'>{randQustions[currentIndex].question}</h2>
+                  <h2 className='question-text text'>{questions[currentIndex].question}</h2>
                </div>
             </div>
 
             <BasicGrid className="answers-row middle mb-5">
-               {randQustions[currentIndex].answers.map((answer, key) => (
+               {questions[currentIndex].answers.map((answer, key) => (
                   <Button
                      className={ "mb-4" + (showAns && answer.isCorrect ? 'ans' : '')}
                      onClick={(e) => { handleAnswerClick(answer.isCorrect, e) }}

@@ -12,10 +12,10 @@ const Navbar = () => {
         <div className='right'>
           <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
             <MDBNavbarItem>
-              <MDBNavbarLink active aria-current='page' href='/' style={{color: "white"}}>Inicio</MDBNavbarLink>
+              <MDBNavbarLink active aria-current='page' href='/' style={{color: "white", fontSize: "30px"}}>Inicio</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='/jugar' style={{color: "white"}}>Jugar</MDBNavbarLink>
+              <MDBNavbarLink href='/jugar' style={{color: "white", fontSize: "30px", marginLeft: "20px"}}>Jugar</MDBNavbarLink>
             </MDBNavbarItem>              
 
           </MDBNavbarNav>
