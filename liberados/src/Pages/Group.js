@@ -1,5 +1,5 @@
 import Navbar from '../Components/Navbar';
-import Question from '../Components/ContentHome';
+import QuestionGroup from '../Components/QuestionGroup';
 import Footer from '../Components/Footer';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,7 +9,7 @@ const Group = () => {
     return (  
     <>
         <Navbar />
-        <Question />
+        <QuestionGroup />
         <Footer />
     </>  
     )

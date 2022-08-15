@@ -2,6 +2,7 @@
 import Juego from './Pages/Question'
 import Dashboard from './Pages/Dashboard'
 import Home from './Pages/Home'
+import Group from './Pages/Group'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
@@ -26,6 +27,8 @@ function App() {
 
           <Route path="/jugar" element={<Juego />} />
           <Route path="/resultados" element={<Dashboard />} />
+          <Route path="/grupo" element={<Group />} />
+
           </Routes>
       </BrowserRouter>    
     </div>
