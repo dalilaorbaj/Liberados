@@ -20,16 +20,24 @@ const Juego = () => {
    const [score, setScore] = useState(0);
    const [avg, setAvg] = useState(0);
    const [showAns, setShowAns] = useState(false);
+
    const [questions, setQuestions] = useState([]);
+   const [isLoaded, setIsLoaded] = useState(false);
+
 
    const traerPreguntas = async () => {
+      
       const x = await getData();
       console.log(x);
       setQuestions(x);
+      setIsLoaded(true)
+
    }
    
    useEffect(() => {
       traerPreguntas()
+      console.log(questions);
+
    }, [])
 
 
@@ -99,7 +107,10 @@ const Juego = () => {
       <>
       <Navbar/>
       <div className='fondo'style={{display: 'flex',alignItems: 'center',justifyContent: 'center'}}>
-         <Box className='question-box m-full-y' >
+         {
+            isLoaded
+            &&
+            <Box className='question-box m-full-y' >
             <div className="top mt-4">
                <br/>
                <br/>
@@ -108,7 +119,7 @@ const Juego = () => {
                   <h2 className='question-text text'>{questions[currentIndex].question}</h2>
                </div>
             </div>
-
+         
             <BasicGrid className="answers-row middle mb-5">
                {questions[currentIndex].answers.map((answer, key) => (
                   <Button
@@ -121,8 +132,10 @@ const Juego = () => {
                      {answer.answerText}
                   </Button>
                ))}
-            </BasicGrid>
+            </BasicGrid>      
          </Box>
+         }
+         
       </div>
       </>   )
 }
