@@ -16,3 +16,30 @@ body {
     text-align: center;
     color: #FFFFFF;
 }
+
+#footer {
+    /*position: fixed;*/
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+
+input{
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 10px;
+    width: 250px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 24px;
+    background-color: white;
+    padding: 12px 20px 12px 25px;
+    transition: width 0.4s ease-in-out;
+  }
+  
+  input:focus{
+    width: 300px;
+    background-color: rgb(240, 236, 236);
+  }
