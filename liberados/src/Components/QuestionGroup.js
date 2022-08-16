@@ -5,19 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 
 const QuestionGroup = () => {
-/*
-  const [grupo, setGrupo] = useState('');
-*/
+
   const navigate = useNavigate()
-
-/*
-  const handleMensaje = (grupo) => {
-    setGrupo(grupo)
-  }
-*/
-  
-
-  
 
   const {values, handleChange, handleSubmit} = useFormik({
       initialValues: {
@@ -30,10 +19,8 @@ const QuestionGroup = () => {
           navigate(`/jugar/${groupName}`)
         }
 
-
       },
     });
-
 
   return (
     <>        
