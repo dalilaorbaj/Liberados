@@ -29,7 +29,7 @@ const Juego = () => {
 
    const traerPreguntas = async () => {
       const x = await getData(grupo);
-      console.log(x);
+      
       setQuestions(x);
       setIsLoaded(true)
 
@@ -37,7 +37,7 @@ const Juego = () => {
    
    useEffect(() => {
       traerPreguntas()
-      console.log(questions);
+      
 
    }, [])
 
