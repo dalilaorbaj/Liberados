@@ -4,7 +4,6 @@ import '../global.css'
 import './Question.css'
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-/*import { randQustions } from '../Components/Quiz'*/
 import ShowMessage from '../Components/ShowMessage';
 import { Box, Button } from '../Components/UIElements';
 import ShowConfetti from '../Components/ShowConfetti';
@@ -29,23 +28,13 @@ const Juego = () => {
 
    const traerPreguntas = async () => {
       const x = await getData(grupo);
-      console.log(x);
       setQuestions(x);
       setIsLoaded(true)
-
    }
    
    useEffect(() => {
       traerPreguntas()
-      console.log(questions);
-
    }, [])
-
-
-/*
-   console.log(questions.length)
-   console.log(questions)*/
-
 
    const handleAnswerClick = (isCorrect, e) => {
       setShowAns(true)
