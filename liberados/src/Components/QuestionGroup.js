@@ -1,4 +1,4 @@
-import React, {useState, Link} from "react";
+import React from "react";
 import '../global.css';
 import { useFormik } from 'formik';
 import { useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ const QuestionGroup = () => {
         <h2 className="mt-5 mb-5">¿Cómo se llama tu grupo?</h2>
         <form onSubmit={handleSubmit}>
 
-          <input id="groupName" name="groupName" type="text" className="u-full-width mb-3" placeholder="Nombre del grupo" value={values.groupName} onChange={handleChange}/> <br/>
+          <input id="groupName" name="groupName" type="text" className="u-full-width mb-3" placeholder="Nombre del grupo" value={values.groupName} onChange={handleChange} style={{borderRadius: "20px"}}/> <br/>
           
           <button id="btn-sbmt" type="submit" className="niceButton buttonForm mt-5 mb-5" style={{width: 200, height: 60}}>
                         <p style={{fontSize: 40, marginTop: "5%"}}> Enviar </p>

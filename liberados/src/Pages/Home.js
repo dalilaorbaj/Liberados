@@ -9,10 +9,12 @@ import '../App.css';
 const Home = () => {
     return (  
     <>
+    <div style={{backgroundColor: "#448FFF"}}>
         <Navbar />
         <Header />
         <ContentHome />
         <Footer />
+    </div>
     </>  
     )
 }
